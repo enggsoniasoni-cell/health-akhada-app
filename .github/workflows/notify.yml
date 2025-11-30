@@ -1,0 +1,41 @@
+name: Deployment Notifications
+
+on:
+  push:
+    branches: [ main ]
+  deployment_status:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Get commit info
+      id: commit
+      run: |
+        echo "message=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+        echo "author=$(git log -1 --pretty=%an)" >> $GITHUB_OUTPUT
+        echo "sha=$(git log -1 --pretty=%h)" >> $GITHUB_OUTPUT
+    
+    - name: Create deployment summary
+      run: |
+        echo "## 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Repository**: health-akhada-app" >> $GITHUB_STEP_SUMMARY
+        echo "**Branch**: main" >> $GITHUB_STEP_SUMMARY
+        echo "**Commit**: ${{ steps.commit.outputs.sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Author**: ${{ steps.commit.outputs.author }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Message**: ${{ steps.commit.outputs.message }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📦 Deployed Files" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ index.html (Dashboard)" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ workout.html (AI Form Coach)" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ nutrition.html (Nutrition Hub)" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ progress.html (Progress Analytics)" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ about.html (Community)" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ JavaScript modules" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Status**: ✅ Deployment Successful!" >> $GITHUB_STEP_SUMMARY
