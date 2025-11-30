@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Health Akhada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-black: #000000;
+            --accent-gold: #D4AF37;
+            --glass-bg: rgba(0, 0, 0, 0.6);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: white;
+        }
+        
+        .bebas { font-family: 'Bebas Neue', cursive; }
+        .oswald { font-family: 'Oswald', sans-serif; }
+        
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E5B0 100%);
+        }
+        
+        .gold-text {
+            color: var(--accent-gold);
+        }
+        
+        .nav-item.active {
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+    
+    <!-- Header -->
+    <header class="p-6">
+        <div class="flex items-center gap-4 mb-2">
+            <a href="index.html" class="text-2xl">←</a>
+            <h1 class="bebas text-3xl gold-text">COMMUNITY</h1>
+        </div>
+        <p class="text-xs text-gray-400 oswald">Connect • Inspire • Grow Together</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="px-6 space-y-6">
+        
+        <!-- Community Feed -->
+        <div class="glass-card p-6">
+            <h3 class="bebas text-xl gold-text mb-4">COMMUNITY WALL</h3>
+            
+            <div class="space-y-4">
+                <!-- Post 1 -->
+                <div class="bg-black bg-opacity-50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center text-black font-bold">
+                            R
+                        </div>
+                        <div>
+                            <p class="font-semibold">Rahul Sharma</p>
+                            <p class="text-xs text-gray-400">2 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-sm mb-3">Just hit a new PR on deadlift! 150kg 💪 The journey continues!</p>
+                    <div class="flex gap-4 text-sm text-gray-400">
+                        <button class="flex items-center gap-1">
+                            <span>❤️</span> 24
+                        </button>
+                        <button class="flex items-center gap-1">
+                            <span>💬</span> 8
+                        </button>
+                        <button class="flex items-center gap-1">
+                            <span>🔄</span> Share
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="bg-black bg-opacity-50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center text-black font-bold">
+                            P
+                        </div>
+                        <div>
+                            <p class="font-semibold">Priya Patel</p>
+                            <p class="text-xs text-gray-400">5 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-sm mb-3">30 days transformation complete! Down 5kg and feeling stronger than ever 🔥</p>
+                    <div class="flex gap-4 text-sm text-gray-400">
+                        <button class="flex items-center gap-1">
+                            <span>❤️</span> 42
+                        </button>
+                        <button class="flex items-center gap-1">
+                            <span>💬</span> 15
+                        </button>
+                        <button class="flex items-center gap-1">
+                            <span>🔄</span> Share
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="bg-black bg-opacity-50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center text-black font-bold">
+                            A
+                        </div>
+                        <div>
+                            <p class="font-semibold">Arjun Singh</p>
+                            <p class="text-xs text-gray-400">1 day ago</p>
+                        </div>
+                    </div>
+                    <p class="text-sm mb-3">Morning workout done! Who else is crushing their goals today? 💯</p>
+                    <div class="flex gap-4 text-sm text-gray-400">
+                        <button class="flex items-center gap-1">
+                            <span>❤️</span> 18
+                        </button>
+                        <button class="flex items-center gap-1">
+                            <span>💬</span> 6
+                        </button>
+                        <button class="flex items-center gap-1">
+                            <span>🔄</span> Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="w-full mt-4 gold-gradient text-black font-bold py-3 rounded-lg">
+                Share Your Progress
+            </button>
+        </div>
+
+        <!-- Leaderboards -->
+        <div class="glass-card p-6">
+            <h3 class="bebas text-xl gold-text mb-4">WEEKLY LEADERBOARD</h3>
+            
+            <div class="space-y-3">
+                <div class="flex items-center gap-3 bg-black bg-opacity-50 p-3 rounded-lg">
+                    <div class="w-8 h-8 rounded-full gold-gradient flex items-center justify-center text-black font-bold">
+                        1
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-semibold">Vikram Mehta</p>
+                        <p class="text-xs text-gray-400">12 workouts • 847 mins</p>
+                    </div>
+                    <span class="text-2xl">🏆</span>
+                </div>
+
+                <div class="flex items-center gap-3 bg-black bg-opacity-50 p-3 rounded-lg">
+                    <div class="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center text-black font-bold">
+                        2
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-semibold">Sonia Chouhan</p>
+                        <p class="text-xs text-gray-400">11 workouts • 782 mins</p>
+                    </div>
+                    <span class="text-2xl">🥈</span>
+                </div>
+
+                <div class="flex items-center gap-3 bg-black bg-opacity-50 p-3 rounded-lg">
+                    <div class="w-8 h-8 rounded-full bg-orange-600 flex items-center justify-center text-white font-bold">
+                        3
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-semibold">Amit Kumar</p>
+                        <p class="text-xs text-gray-400">10 workouts • 725 mins</p>
+                    </div>
+                    <span class="text-2xl">🥉</span>
+                </div>
+
+                <div class="flex items-center gap-3 bg-black bg-opacity-50 p-3 rounded-lg border-2 border-gold-500">
+                    <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-white font-bold">
+                        8
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-semibold">You</p>
+                        <p class="text-xs text-gray-400">7 workouts • 542 mins</p>
+                    </div>
+                    <span class="text-2xl">💪</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Women's Leaderboard -->
+        <div class="glass-card p-6">
+            <h3 class="bebas text-xl gold-text mb-4">WOMEN'S LEADERBOARD</h3>
+            
+            <div class="space-y-3">
+                <div class="flex items-center gap-3 bg-black bg-opacity-50 p-3 rounded-lg">
+                    <div class="w-8 h-8 rounded-full gold-gradient flex items-center justify-center text-black font-bold">
+                        1
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-semibold">Priya Sharma</p>
+                        <p class="text-xs text-gray-400">10 workouts • 695 mins</p>
+                    </div>
+                    <span class="text-2xl">👑</span>
+                </div>
+
+                <div class="flex items-center gap-3 bg-black bg-opacity-50 p-3 rounded-lg">
+                    <div class="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center text-black font-bold">
+                        2
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-semibold">Neha Gupta</p>
+                        <p class="text-xs text-gray-400">9 workouts • 628 mins</p>
+                    </div>
+                    <span class="text-2xl">⭐</span>
+                </div>
+
+                <div class="flex items-center gap-3 bg-black bg-opacity-50 p-3 rounded-lg">
+                    <div class="w-8 h-8 rounded-full bg-orange-600 flex items-center justify-center text-white font-bold">
+                        3
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-semibold">Anjali Verma</p>
+                        <p class="text-xs text-gray-400">8 workouts • 587 mins</p>
+                    </div>
+                    <span class="text-2xl">✨</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trainer Content -->
+        <div class="glass-card p-6">
+            <h3 class="bebas text-xl gold-text mb-4">TRAINER TIPS</h3>
+            
+            <div class="space-y-3">
+                <div class="bg-black bg-opacity-50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-3xl">🎥</span>
+                        <div>
+                            <p class="font-semibold">Perfect Squat Form</p>
+                            <p class="text-xs text-gray-400">Coach Rajesh • 5 min</p>
+                        </div>
+                    </div>
+                    <button class="text-xs gold-text font-semibold">Watch Now →</button>
+                </div>
+
+                <div class="bg-black bg-opacity-50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-3xl">🎥</span>
+                        <div>
+                            <p class="font-semibold">Nutrition for Muscle Gain</p>
+                            <p class="text-xs text-gray-400">Coach Priya • 8 min</p>
+                        </div>
+                    </div>
+                    <button class="text-xs gold-text font-semibold">Watch Now →</button>
+                </div>
+
+                <div class="bg-black bg-opacity-50 rounded-lg p-4">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-3xl">🎥</span>
+                        <div>
+                            <p class="font-semibold">Recovery Techniques</p>
+                            <p class="text-xs text-gray-400">Coach Amit • 6 min</p>
+                        </div>
+                    </div>
+                    <button class="text-xs gold-text font-semibold">Watch Now →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Health Akhada -->
+        <div class="glass-card p-6">
+            <h3 class="bebas text-xl gold-text mb-4">ABOUT HEALTH AKHADA</h3>
+            <p class="text-sm text-gray-300 mb-4">
+                Health Akhada combines traditional Indian wrestling heritage with cutting-edge AI technology 
+                to create the ultimate fitness experience. Our mission is to help every warrior achieve their 
+                transformation goals through intelligent training, precise nutrition tracking, and a supportive community.
+            </p>
+            <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                    <p class="text-2xl font-bold gold-text">50K+</p>
+                    <p class="text-xs text-gray-400">Active Warriors</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-bold gold-text">2M+</p>
+                    <p class="text-xs text-gray-400">Workouts Tracked</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-bold gold-text">98%</p>
+                    <p class="text-xs text-gray-400">Success Rate</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact & Support -->
+        <div class="glass-card p-6">
+            <h3 class="bebas text-xl gold-text mb-4">CONTACT & SUPPORT</h3>
+            <div class="space-y-3">
+                <a href="mailto:support@healthakhada.com" class="flex items-center gap-3 bg-black bg-opacity-50 p-3 rounded-lg">
+                    <span class="text-2xl">📧</span>
+                    <div>
+                        <p class="font-semibold">Email Support</p>
+                        <p class="text-xs text-gray-400">support@healthakhada.com</p>
+                    </div>
+                </a>
+                <a href="#" class="flex items-center gap-3 bg-black bg-opacity-50 p-3 rounded-lg">
+                    <span class="text-2xl">💬</span>
+                    <div>
+                        <p class="font-semibold">Live Chat</p>
+                        <p class="text-xs text-gray-400">Available 24/7</p>
+                    </div>
+                </a>
+                <a href="#" class="flex items-center gap-3 bg-black bg-opacity-50 p-3 rounded-lg">
+                    <span class="text-2xl">📱</span>
+                    <div>
+                        <p class="font-semibold">Social Media</p>
+                        <p class="text-xs text-gray-400">@healthakhada</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 glass-card rounded-t-3xl p-4">
+        <div class="flex justify-around items-center">
+            <a href="index.html" class="nav-item flex flex-col items-center text-gray-400">
+                <span class="text-2xl">🏠</span>
+                <span class="text-xs mt-1">Home</span>
+            </a>
+            <a href="workout.html" class="nav-item flex flex-col items-center text-gray-400">
+                <span class="text-2xl">💪</span>
+                <span class="text-xs mt-1">Workout</span>
+            </a>
+            <a href="nutrition.html" class="nav-item flex flex-col items-center text-gray-400">
+                <span class="text-2xl">🥗</span>
+                <span class="text-xs mt-1">Nutrition</span>
+            </a>
+            <a href="progress.html" class="nav-item flex flex-col items-center text-gray-400">
+                <span class="text-2xl">📊</span>
+                <span class="text-xs mt-1">Progress</span>
+            </a>
+            <a href="about.html" class="nav-item active flex flex-col items-center">
+                <span class="text-2xl">👥</span>
+                <span class="text-xs mt-1">Community</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="main.js"></script>
+</body>
+</html>
