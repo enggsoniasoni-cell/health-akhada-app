@@ -55,6 +55,10 @@
         .nav-item.active {
             color: var(--accent-gold);
         }
+
+        a.glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+        }
     </style>
 </head>
 <body class="min-h-screen pb-20">
@@ -147,12 +151,12 @@
 
         <!-- Quick Actions -->
         <div class="grid grid-cols-2 gap-4">
-            <a href="workout.html" class="glass-card p-6 text-center hover:border-gold-500 transition">
+            <a href="workout.html" class="glass-card p-6 text-center transition">
                 <div class="text-4xl mb-2">💪</div>
                 <p class="font-semibold">AI Form Coach</p>
                 <p class="text-xs text-gray-400 mt-1">Start Workout</p>
             </a>
-            <a href="nutrition.html" class="glass-card p-6 text-center hover:border-gold-500 transition">
+            <a href="nutrition.html" class="glass-card p-6 text-center transition">
                 <div class="text-4xl mb-2">🥗</div>
                 <p class="font-semibold">Nutrition Hub</p>
                 <p class="text-xs text-gray-400 mt-1">Track Meals</p>
@@ -271,5 +275,16 @@
 
     <script src="main.js"></script>
     <script src="body-intelligence.js"></script>
+    <script>
+        // Dynamically update the SVG energy ring to match the stored energy score
+        document.addEventListener('DOMContentLoaded', function() {
+            const userData = JSON.parse(localStorage.getItem('healthAkhadaUser'));
+            const score = userData ? userData.energyScore : 87;
+            const circumference = 251.2; // 2 * π * r (r=40)
+            const offset = (circumference * (1 - score / 100)).toFixed(1);
+            const ring = document.getElementById('energyCircle');
+            if (ring) ring.setAttribute('stroke-dashoffset', offset);
+        });
+    </script>
 </body>
 </html>

@@ -97,18 +97,20 @@ function generateWorkoutRecommendation(nadi, agni, shakti) {
 
 // Simulate Gabbit Ring Data Sync
 function syncGabbitRing() {
-    // Simulate real-time data with slight variations
-    gabbitRingData.hrv = 42 + Math.floor(Math.random() * 10) - 5;
-    gabbitRingData.restingHR = 58 + Math.floor(Math.random() * 6) - 3;
-    gabbitRingData.bodyTemp = 36.7 + (Math.random() * 0.4 - 0.2);
-    gabbitRingData.sleepQuality = 85 + Math.floor(Math.random() * 10) - 5;
-    gabbitRingData.recoveryScore = 78 + Math.floor(Math.random() * 10) - 5;
-    gabbitRingData.lastSync = new Date().toISOString();
-    
-    // Save to localStorage
-    localStorage.setItem('gabbitRingData', JSON.stringify(gabbitRingData));
-    
-    return gabbitRingData;
+    // Load persisted values so simulated drift is cumulative across sessions // SIMULATED
+    const stored = localStorage.getItem('gabbitRingData');
+    const current = stored ? JSON.parse(stored) : { ...gabbitRingData };
+
+    // Apply small random variations to the current stored values
+    current.hrv = Math.max(20, Math.min(80, current.hrv + Math.floor(Math.random() * 6) - 3));
+    current.restingHR = Math.max(45, Math.min(80, current.restingHR + Math.floor(Math.random() * 4) - 2));
+    current.bodyTemp = parseFloat(Math.max(36.0, Math.min(37.5, current.bodyTemp + (Math.random() * 0.2 - 0.1))).toFixed(1));
+    current.sleepQuality = Math.max(50, Math.min(100, current.sleepQuality + Math.floor(Math.random() * 6) - 3));
+    current.recoveryScore = Math.max(30, Math.min(100, current.recoveryScore + Math.floor(Math.random() * 6) - 3));
+    current.lastSync = new Date().toISOString();
+
+    localStorage.setItem('gabbitRingData', JSON.stringify(current));
+    return current;
 }
 
 // Update Body Intelligence Card

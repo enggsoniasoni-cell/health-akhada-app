@@ -232,6 +232,7 @@ const achievements = {
 // Check and unlock achievements
 function checkAchievements() {
     const userData = JSON.parse(localStorage.getItem('healthAkhadaUser'));
+    if (!userData) return;
     const progressTracker = ProgressTracker.load();
     
     const stats = {

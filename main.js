@@ -94,10 +94,8 @@ function saveUserData(data) {
 
 // Update energy score
 function updateEnergyScore(score) {
-    const userData = JSON.parse(localStorage.getItem('healthAkhadaUser'));
-    userData.energyScore = score;
-    saveUserData(userData);
-    
+    saveUserData({ energyScore: score });
+
     const energyScoreElement = document.getElementById('energyScore');
     if (energyScoreElement) {
         energyScoreElement.textContent = score;
